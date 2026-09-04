@@ -13,6 +13,7 @@ config_version=5
 config/name="start up template"
 config/version="0.01"
 config/tags=PackedStringArray("template")
+run/main_scene="uid://bjnowo1bes786"
 config/features=PackedStringArray("4.7", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
@@ -24,8 +25,10 @@ Global="*uid://dcc3otpobaw3"
 
 [display]
 
-window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
+window/size/viewport_width=640
+window/size/viewport_height=480
+window/size/mode=3
+window/stretch/mode="viewport"
 
 [file_customization]
 
