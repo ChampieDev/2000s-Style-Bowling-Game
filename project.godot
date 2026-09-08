@@ -38,6 +38,7 @@ folder_colors={
 "res://assets/art/": "red",
 "res://assets/audio/": "teal",
 "res://data/": "purple",
+"res://resources/": "red",
 "res://scenes/": "blue",
 "res://scripts/": "yellow"
 }
