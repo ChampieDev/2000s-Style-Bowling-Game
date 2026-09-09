@@ -12,7 +12,6 @@ config_version=5
 
 config/name="2000s Style Bowling Game"
 config/version="0.01"
-config/tags=PackedStringArray("template")
 run/main_scene="uid://bjnowo1bes786"
 config/features=PackedStringArray("4.7", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
@@ -25,8 +24,8 @@ Global="*uid://dcc3otpobaw3"
 
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=480
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/size/mode=3
 window/stretch/mode="viewport"
 
