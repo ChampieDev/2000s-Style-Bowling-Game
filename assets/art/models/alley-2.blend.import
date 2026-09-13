@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dvl2icqmuv7ln"
-path="res://.godot/imported/lane.blend-505412c03aedc39d253802f00bf9c7ca.scn"
+uid="uid://dd1lgd1jvuwsf"
+path="res://.godot/imported/alley-2.blend-4f5d3f5aa2c3339b2258aa2a27f991e0.scn"
 
 [deps]
 
-source_file="res://assets/art/models/lane.blend"
-dest_files=["res://.godot/imported/lane.blend-505412c03aedc39d253802f00bf9c7ca.scn"]
+source_file="res://assets/art/models/alley-2.blend"
+dest_files=["res://.godot/imported/alley-2.blend-4f5d3f5aa2c3339b2258aa2a27f991e0.scn"]
 
 [params]
 

@@ -1,10 +1,9 @@
 [gd_scene format=3 uid="uid://bjnowo1bes786"]
 
 [ext_resource type="PackedScene" uid="uid://box3ia8crcqdx" path="res://scenes/player.tscn" id="1_o5qli"]
-[ext_resource type="PackedScene" uid="uid://dvl2icqmuv7ln" path="res://assets/art/models/lane.blend" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://xjstojnqffer" path="res://assets/art/models/alley-2.glb" id="2_0wfyh"]
 
 [sub_resource type="Environment" id="Environment_sgp6g"]
-background_mode = 1
 glow_enabled = true
 
 [node name="Main" type="Node3D" unique_id=1648061429]
@@ -19,5 +18,5 @@ shadow_enabled = true
 [node name="Player" parent="." unique_id=470138085 instance=ExtResource("1_o5qli")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 
-[node name="lane" parent="." unique_id=691620772 instance=ExtResource("2_0wfyh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -4.7)
+[node name="alley-2" parent="." unique_id=1445939344 instance=ExtResource("2_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.39999995, -4.5)
