@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://bjnowo1bes786"]
 
+[ext_resource type="PackedScene" uid="uid://b5thw26q4m8u" path="res://scenes/hud.tscn" id="1_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://box3ia8crcqdx" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://xjstojnqffer" path="res://assets/art/models/alley-2.glb" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://dutcy2cyq31eh" path="res://scenes/bowling_ball.tscn" id="3_sugp2"]
 
 [sub_resource type="Environment" id="Environment_sgp6g"]
 glow_enabled = true
@@ -15,8 +17,13 @@ environment = SubResource("Environment_sgp6g")
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2114819930]
+
+[node name="HUD" parent="CanvasLayer" unique_id=105312940 instance=ExtResource("1_jyhfs")]
+
 [node name="Player" parent="." unique_id=470138085 instance=ExtResource("1_o5qli")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 2.9999998)
+bowling_ball_scene = ExtResource("3_sugp2")
 
 [node name="alley-2" parent="." unique_id=1445939344 instance=ExtResource("2_0wfyh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.39999995, -4.5)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, -0.39999995, -4.5)

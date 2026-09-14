@@ -20,3 +20,6 @@ shape = SubResource("ConvexPolygonShape3D_u8vuu")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=965669038]
+
+[node name="BowlingBallSpawner" type="Marker3D" parent="." unique_id=1030438073]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, -1)
