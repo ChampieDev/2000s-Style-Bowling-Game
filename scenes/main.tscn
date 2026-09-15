@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b5thw26q4m8u" path="res://scenes/hud.tscn" id="1_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://box3ia8crcqdx" path="res://scenes/player.tscn" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://bt8erlc3qaq4a" path="res://scripts/main.gd" id="1_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://xjstojnqffer" path="res://assets/art/models/alley-2.glb" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://dutcy2cyq31eh" path="res://scenes/bowling_ball.tscn" id="3_sugp2"]
 
@@ -9,6 +10,7 @@
 glow_enabled = true
 
 [node name="Main" type="Node3D" unique_id=1648061429]
+script = ExtResource("1_tbgi4")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2140406790]
 environment = SubResource("Environment_sgp6g")
@@ -25,5 +27,13 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 2.9999998)
 bowling_ball_scene = ExtResource("3_sugp2")
 
+[node name="CameraRemote" type="RemoteTransform3D" parent="Player" unique_id=2138317420]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+remote_path = NodePath("../../Camera3D")
+update_rotation = false
+
 [node name="alley-2" parent="." unique_id=1445939344 instance=ExtResource("2_0wfyh")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, -0.39999995, -4.5)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=188301667]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 2.9999998)

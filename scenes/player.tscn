@@ -16,10 +16,5 @@ mesh = SubResource("CapsuleMesh_3cl70")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1040625075]
 shape = SubResource("ConvexPolygonShape3D_u8vuu")
 
-[node name="CameraPivot" type="Node3D" parent="." unique_id=960506733]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-
-[node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=965669038]
-
 [node name="BowlingBallSpawner" type="Marker3D" parent="." unique_id=1030438073]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7, -1)
