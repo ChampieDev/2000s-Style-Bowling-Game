@@ -1,5 +1,7 @@
 class_name PlayerState extends State
 
+const AIMING = "Aiming"
+
 var player: Player
 
 func _ready() -> void:
