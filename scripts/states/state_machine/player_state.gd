@@ -1,6 +1,7 @@
 class_name PlayerState extends State
 
 const AIMING = "Aiming"
+const ROLLING = "Rolling"
 
 var player: Player
 

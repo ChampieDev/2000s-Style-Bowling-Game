@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://box3ia8crcqdx"]
 
 [ext_resource type="Script" uid="uid://bpxjgqxpdww1t" path="res://scripts/player.gd" id="1_3vyb7"]
+[ext_resource type="PackedScene" uid="uid://blsvki1kiyk6x" path="res://scenes/camera_pivot.tscn" id="2_g2els"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_3cl70"]
 
@@ -18,3 +19,5 @@ shape = SubResource("ConvexPolygonShape3D_u8vuu")
 
 [node name="BowlingBallSpawner" type="Marker3D" parent="." unique_id=1030438073]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7, -1)
+
+[node name="CameraPivot" parent="." unique_id=699525439 instance=ExtResource("2_g2els")]
