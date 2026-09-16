@@ -1,17 +1,14 @@
 extends Node3D
 
-
 func _ready() -> void:
-	Global.release_throw.connect(_change_camera)
-
-
-func _change_camera(_force: float):
+	# Global.release_throw.connect(_change_camera)
+	pass
 	
-	await get_tree().process_frame
+func _process(delta: float) -> void:
 	
 	var ball = find_child("BowlingBall", true, false)
 	
 	if ball:
-		$Player/CameraRemote.reparent(ball)
+		%CameraPivot.tracking = ball
 	else:
-		print("Error: No Bowling ball :(")
+		%CameraPivot.tracking = $Player
