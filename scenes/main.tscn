@@ -2,10 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://box3ia8crcqdx" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://bt8erlc3qaq4a" path="res://scripts/main.gd" id="1_tbgi4"]
-[ext_resource type="PackedScene" uid="uid://dutcy2cyq31eh" path="res://scenes/bowling_ball.tscn" id="3_sugp2"]
-[ext_resource type="Script" uid="uid://bfyvhxj4l70d6" path="res://scripts/states/player_states/aiming_state.gd" id="6_tipki"]
-[ext_resource type="Script" uid="uid://crpvn0kx2on8w" path="res://scripts/states/state_machine/state_machine.gd" id="7_o6xl0"]
-[ext_resource type="Script" uid="uid://cx2wg8kl3b7ha" path="res://scripts/states/player_states/rolling_state.gd" id="7_tipki"]
 [ext_resource type="PackedScene" uid="uid://blsvki1kiyk6x" path="res://scenes/camera_pivot.tscn" id="8_85g3d"]
 [ext_resource type="Material" uid="uid://blsaf1lhfy7kg" path="res://assets/art/textures/template/prototype.tres" id="8_tipki"]
 
@@ -24,16 +20,6 @@ shadow_enabled = true
 
 [node name="Player" parent="." unique_id=470138085 instance=ExtResource("1_o5qli")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 2.9999998)
-bowling_ball_scene = ExtResource("3_sugp2")
-
-[node name="StateMachine" type="Node" parent="Player" unique_id=1508051287]
-script = ExtResource("7_o6xl0")
-
-[node name="Aiming" type="Node" parent="Player/StateMachine" unique_id=230630081]
-script = ExtResource("6_tipki")
-
-[node name="Rolling" type="Node" parent="Player/StateMachine" unique_id=994038539]
-script = ExtResource("7_tipki")
 
 [node name="CameraPivot" parent="Player" unique_id=699525439 instance=ExtResource("8_85g3d")]
 
