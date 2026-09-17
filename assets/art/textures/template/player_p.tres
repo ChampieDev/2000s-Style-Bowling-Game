@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://qxfis282c3bw"]
+
+[ext_resource type="Texture2D" uid="uid://baq5nvs8682tl" path="res://assets/art/textures/template/template_texture.png" id="1_vi877"]
+
+[resource]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(0, 1, 0, 0.39215687)
+albedo_texture = ExtResource("1_vi877")
+uv1_triplanar = true
