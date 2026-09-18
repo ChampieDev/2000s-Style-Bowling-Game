@@ -8,3 +8,5 @@ class_name Player extends CharacterBody3D
 @export var bowling_ball_scene: PackedScene
 
 var can_throw: bool = true
+
+var inputs_finished: Array[String] = []

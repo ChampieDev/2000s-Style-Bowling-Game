@@ -5,10 +5,13 @@ func enter(previous_state_path: String, data := {}) -> void:
 	player.velocity = Vector3.ZERO
 	# player.animation_player.play("idle)
 
-func physics_update(_delta: float) -> void:
+func physics_update(delta: float) -> void:
 	var input_axis = Input.get_axis("left", "right")
+	var rotation_axis = Input.get_axis("rotate_left", "rotate_right")
 	
 	player.velocity.x = input_axis * player.speed
+	
+	player.rotation.y += rotation_axis * player.speed * delta
 	
 	if Input.is_action_just_released("throw") and player.can_throw:
 		var bb = player.bowling_ball_scene.instantiate()

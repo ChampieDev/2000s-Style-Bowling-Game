@@ -4,5 +4,5 @@ func _ready() -> void:
 	Global.release_throw.connect(throw)
 
 func throw(force: float):
-	var throw_vector = Vector3.FORWARD * force
+	var throw_vector = (-global_transform.basis.z) * force
 	apply_central_impulse(throw_vector)
