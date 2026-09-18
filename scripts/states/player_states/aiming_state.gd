@@ -1,6 +1,7 @@
 extends PlayerState
 
 func enter(previous_state_path: String, data := {}) -> void:
+	Global.change_camera.emit(AIMING)
 	player.velocity = Vector3.ZERO
 	# player.animation_player.play("idle)
 
@@ -13,7 +14,8 @@ func physics_update(_delta: float) -> void:
 		var bb = player.bowling_ball_scene.instantiate()
 		player.bowling_ball_spawner.add_child(bb)
 		bb.name = "BowlingBall"
-		bb.reparent($"..", true)
+		var main = get_tree().current_scene
+		bb.reparent(main, true)
 		Global.emit_signal("release_throw", player.force)
 		player.can_throw = false
 		finished.emit(ROLLING)

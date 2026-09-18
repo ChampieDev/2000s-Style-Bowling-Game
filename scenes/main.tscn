@@ -21,7 +21,13 @@ shadow_enabled = true
 [node name="Player" parent="." unique_id=470138085 instance=ExtResource("1_o5qli")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 2.9999998)
 
-[node name="CameraPivot" parent="Player" unique_id=699525439 instance=ExtResource("8_85g3d")]
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Player" unique_id=1666620404]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7, -2.9999998)
+remote_path = NodePath("../../CameraPivot")
+update_rotation = false
+
+[node name="CameraPivot" parent="." unique_id=699525439 instance=ExtResource("8_85g3d")]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=544765655]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -13)

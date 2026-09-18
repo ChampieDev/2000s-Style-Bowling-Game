@@ -1,1 +1,20 @@
-extends Node3D
+class_name Main extends Node3D
+
+@onready var player: Player = $Player
+
+func _ready() -> void:
+	Global.change_camera.connect(_on_change_camera)
+	
+func _process(delta: float) -> void:
+	var ball = $Player.find_child("BowlingBall", true, false)
+	if ball and ball.get_parent() == player:
+		ball.reparent(get_tree().current_scene)
+	
+func _on_change_camera(target):
+	print(target)
+	match target:
+		"Aiming":
+			%RemoteTransform3D.reparent($Player)
+		"Rolling":
+			var ball = get_tree().current_scene.find_child("BowlingBall", true, false)
+			%RemoteTransform3D.reparent(ball)
