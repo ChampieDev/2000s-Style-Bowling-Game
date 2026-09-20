@@ -4,7 +4,7 @@ class_name Main extends Node3D
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	Global.change_camera.connect(_on_change_camera)
+	Global.switch_camera_target.connect(_on_change_camera)
 	
 func _process(delta: float) -> void:
 	var ball = $Player.find_child("BowlingBall", true, false)
@@ -20,4 +20,4 @@ func _on_change_camera(target):
 		"Rolling":
 			var ball = get_tree().current_scene.find_child("BowlingBall", true, false)
 			%RemoteTransform3D.reparent(ball)
-			%RemoteTransform3D.update_rotation = true
+			%RemoteTransform3D.update_rotation = false

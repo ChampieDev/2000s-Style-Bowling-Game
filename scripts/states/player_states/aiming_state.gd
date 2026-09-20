@@ -1,7 +1,7 @@
 extends PlayerState
 
 func enter(previous_state_path: String, data := {}) -> void:
-	Global.change_camera.emit(AIMING)
+	Global.switch_camera_target.emit(AIMING)
 	player.velocity = Vector3.ZERO
 	# player.animation_player.play("idle)
 
