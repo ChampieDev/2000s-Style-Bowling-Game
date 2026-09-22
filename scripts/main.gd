@@ -2,6 +2,14 @@ class_name Main extends Node3D
 
 @onready var player: Player = $Player
 
+@onready var transition_camera: Camera3D = $TransitionCamera
+@onready var  current_camera: Camera3D = $PlayerCamera
+
+var TransitionTween: Tween
+var TransitionZoomTween: Tween
+var TransitionOffsetTween: Tween
+
+
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	Global.switch_camera_target.connect(_on_change_camera)
@@ -11,13 +19,10 @@ func _process(delta: float) -> void:
 	if ball and ball.get_parent() == player:
 		ball.reparent(get_tree().current_scene)
 	
-func _on_change_camera(target):
-	print(target)
-	match target:
-		"Aiming":
-			%RemoteTransform3D.reparent($Player)
-			%RemoteTransform3D.update_rotation = false
-		"Rolling":
-			var ball = get_tree().current_scene.find_child("BowlingBall", true, false)
-			%RemoteTransform3D.reparent(ball)
-			%RemoteTransform3D.update_rotation = false
+func _on_change_camera():
+	if $PlayerCamera.is_current():
+		$BallCamera.make_current()
+	else:
+		$PlayerCamera.make_current()
+	
+	
