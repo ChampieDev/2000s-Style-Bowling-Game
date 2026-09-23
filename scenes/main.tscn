@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://box3ia8crcqdx" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://bt8erlc3qaq4a" path="res://scripts/main.gd" id="1_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://dutcy2cyq31eh" path="res://scenes/bowling_ball.tscn" id="3_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://blsvki1kiyk6x" path="res://scenes/camera_pivot.tscn" id="4_tbgi4"]
 [ext_resource type="Material" uid="uid://blsaf1lhfy7kg" path="res://assets/art/textures/template/prototype.tres" id="8_tipki"]
 
 [sub_resource type="Environment" id="Environment_sgp6g"]
@@ -19,6 +21,9 @@ shadow_enabled = true
 
 [node name="Player" parent="." unique_id=470138085 instance=ExtResource("1_o5qli")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 2.9999998)
+bowling_ball_scene = ExtResource("3_jyhfs")
+
+[node name="CameraPivot" parent="Player" unique_id=699525439 instance=ExtResource("4_tbgi4")]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=544765655]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -13)
@@ -31,10 +36,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 3)
 use_collision = true
 size = Vector3(30, 1, 2)
 material = ExtResource("8_tipki")
-
-[node name="PlayerCamera" type="Camera3D" parent="." unique_id=1264541505]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0342531, 4.8992605)
-
-[node name="BallCamera" type="Camera3D" parent="." unique_id=792869175]
-
-[node name="TransitionCamera" type="Camera3D" parent="." unique_id=1995966655]

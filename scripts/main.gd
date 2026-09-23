@@ -2,9 +2,6 @@ class_name Main extends Node3D
 
 @onready var player: Player = $Player
 
-@onready var transition_camera: Camera3D = $TransitionCamera
-@onready var  current_camera: Camera3D = $PlayerCamera
-
 var TransitionTween: Tween
 var TransitionZoomTween: Tween
 var TransitionOffsetTween: Tween

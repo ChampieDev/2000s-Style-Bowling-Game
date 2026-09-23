@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bpxjgqxpdww1t" path="res://scripts/player.gd" id="1_3vyb7"]
 [ext_resource type="Material" uid="uid://qxfis282c3bw" path="res://assets/art/textures/template/player_p.tres" id="2_g2els"]
-[ext_resource type="PackedScene" uid="uid://dutcy2cyq31eh" path="res://scenes/bowling_ball.tscn" id="2_tuyoq"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_3cl70"]
 material = ExtResource("2_g2els")
@@ -13,7 +12,6 @@ points = PackedVector3Array(0.3812729, 0.68024004, 0.08548619, -0.38629708, -0.6
 
 [node name="Player" type="CharacterBody3D" unique_id=470138085]
 script = ExtResource("1_3vyb7")
-bowling_ball_scene = ExtResource("2_tuyoq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1629512091]
 mesh = SubResource("CapsuleMesh_3cl70")
