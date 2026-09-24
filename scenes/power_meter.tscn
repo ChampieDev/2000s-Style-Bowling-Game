@@ -1,20 +1,24 @@
 [gd_scene format=3 uid="uid://l4y8cqw1rxbm"]
 
 [ext_resource type="Script" uid="uid://3yy5b8yuymqi" path="res://scripts/power_meter.gd" id="1_c0euw"]
+[ext_resource type="Texture2D" uid="uid://debwp5lw1cwat" path="res://assets/art/UI/Progressbar/horizontal_bg.png" id="2_w2clt"]
+[ext_resource type="Texture2D" uid="uid://c0tkpwph3mq4e" path="res://assets/art/UI/Progressbar/horizontal_fill.png" id="3_ncbie"]
+[ext_resource type="Texture2D" uid="uid://dpd700kp0wbs0" path="res://assets/art/UI/Progressbar/circle_bg.png" id="4_sa2nq"]
+[ext_resource type="Texture2D" uid="uid://cnneewd6d7boe" path="res://assets/art/UI/Progressbar/circle_fill.png" id="5_a1tos"]
 
 [sub_resource type="Animation" id="Animation_7yvlo"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MarginContainer/ProgressBar:value")
+tracks/0/path = NodePath(".:p_value")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [100.0]
+"update": 1,
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_w2clt"]
@@ -23,14 +27,14 @@ loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MarginContainer/ProgressBar:value")
+tracks/0/path = NodePath(".:p_value")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 100.0]
+"values": [0, 100]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ncbie"]
@@ -48,28 +52,25 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_c0euw")
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=939531061]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 128
-theme_override_constants/margin_top = 256
-theme_override_constants/margin_right = 128
-theme_override_constants/margin_bottom = 256
-
-[node name="Panel" type="Panel" parent="MarginContainer" unique_id=239981776]
-visible = false
-layout_mode = 2
-
-[node name="ProgressBar" type="ProgressBar" parent="MarginContainer" unique_id=31614787]
-custom_minimum_size = Vector2(0, 128)
-layout_mode = 2
-step = 1.0
-value = 100.0
-show_percentage = false
-
 [node name="anims" type="AnimationPlayer" parent="." unique_id=1535420931]
 libraries/ = SubResource("AnimationLibrary_ncbie")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=58117542]
+layout_mode = 0
+offset_left = 238.0
+offset_top = 1.0
+offset_right = 1518.0
+offset_bottom = 721.0
+min_value = 50.0
+value = 50.0
+texture_under = ExtResource("2_w2clt")
+texture_progress = ExtResource("3_ncbie")
+
+[node name="TextureProgressBar2" type="TextureProgressBar" parent="." unique_id=1730911346]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+max_value = 50.0
+fill_mode = 4
+texture_under = ExtResource("4_sa2nq")
+texture_progress = ExtResource("5_a1tos")
