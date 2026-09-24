@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://box3ia8crcqdx" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://bt8erlc3qaq4a" path="res://scripts/main.gd" id="1_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://l4y8cqw1rxbm" path="res://scenes/power_meter.tscn" id="2_tefeu"]
 [ext_resource type="PackedScene" uid="uid://dutcy2cyq31eh" path="res://scenes/bowling_ball.tscn" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://blsvki1kiyk6x" path="res://scenes/camera_pivot.tscn" id="4_tbgi4"]
 [ext_resource type="Material" uid="uid://blsaf1lhfy7kg" path="res://assets/art/textures/template/prototype.tres" id="8_tipki"]
@@ -18,6 +19,12 @@ environment = SubResource("Environment_sgp6g")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=978131260]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1568474282]
+
+[node name="PowerMeter" parent="CanvasLayer" unique_id=656314539 instance=ExtResource("2_tefeu")]
+offset_left = 768.0
+offset_top = 432.0
 
 [node name="Player" parent="." unique_id=470138085 instance=ExtResource("1_o5qli")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 2.9999998)

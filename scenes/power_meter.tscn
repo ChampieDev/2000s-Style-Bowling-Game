@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://l4y8cqw1rxbm"]
+
+[ext_resource type="Script" uid="uid://3yy5b8yuymqi" path="res://scripts/power_meter.gd" id="1_c0euw"]
+
+[sub_resource type="Animation" id="Animation_7yvlo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/ProgressBar:value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [100.0]
+}
+
+[sub_resource type="Animation" id="Animation_w2clt"]
+resource_name = "start"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/ProgressBar:value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 100.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ncbie"]
+_data = {
+&"RESET": SubResource("Animation_7yvlo"),
+&"start": SubResource("Animation_w2clt")
+}
+
+[node name="PowerMeter" type="Control" unique_id=656314539]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c0euw")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=939531061]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_top = 256
+theme_override_constants/margin_right = 128
+theme_override_constants/margin_bottom = 256
+
+[node name="Panel" type="Panel" parent="MarginContainer" unique_id=239981776]
+visible = false
+layout_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer" unique_id=31614787]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="anims" type="AnimationPlayer" parent="." unique_id=1535420931]
+libraries/ = SubResource("AnimationLibrary_ncbie")

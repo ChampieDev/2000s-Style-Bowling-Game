@@ -1,3 +1,4 @@
 [gd_scene format=3 uid="uid://dyprrvrp8w24f"]
 
 [node name="BowlingPin" type="RigidBody3D" unique_id=304665493]
+constant_force = Vector3(0, 0, 1)
