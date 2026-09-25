@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://djowckebmhal5"]
 
 [ext_resource type="Script" uid="uid://c7qwxbn43xfsu" path="res://scripts/player_2.gd" id="1_l6tho"]
+[ext_resource type="PackedScene" uid="uid://c5aex0vu0pym3" path="res://scenes/display_bowling_ball.tscn" id="2_s551d"]
 
 [node name="Player2" type="Node3D" unique_id=325511711]
 script = ExtResource("1_l6tho")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=932513120]
 transform = Transform3D(1, 0, 0, 0, 0.9781476, 0.2079117, 0, -0.2079117, 0.9781476, 0, 0, 0)
+
+[node name="DisplayBowlingBall" parent="." unique_id=1123375219 instance=ExtResource("2_s551d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -1.3)

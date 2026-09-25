@@ -1,3 +1,9 @@
 [gd_scene format=3 uid="uid://c5aex0vu0pym3"]
 
+[ext_resource type="Script" uid="uid://becwg7gqer3gk" path="res://scripts/display_bowling_ball.gd" id="1_grb4s"]
+[ext_resource type="PackedScene" uid="uid://c5m2r0gggd2nw" path="res://assets/art/models/bowling_ball.glb" id="2_moho7"]
+
 [node name="DisplayBowlingBall" type="Node3D" unique_id=1123375219]
+script = ExtResource("1_grb4s")
+
+[node name="bowling_ball" parent="." unique_id=783340958 instance=ExtResource("2_moho7")]
