@@ -7,3 +7,5 @@
 script = ExtResource("1_grb4s")
 
 [node name="bowling_ball" parent="." unique_id=783340958 instance=ExtResource("2_moho7")]
+
+[node name="BallSpawnPoint" type="Marker3D" parent="." unique_id=1361131681]

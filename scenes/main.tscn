@@ -5,14 +5,23 @@
 [ext_resource type="PackedScene" uid="uid://djowckebmhal5" path="res://scenes/player_2.tscn" id="4_jyhfs"]
 [ext_resource type="Material" uid="uid://blsaf1lhfy7kg" path="res://assets/art/textures/template/prototype.tres" id="8_tipki"]
 
-[sub_resource type="Environment" id="Environment_sgp6g"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jyhfs"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_tbgi4"]
+sky_material = SubResource("ProceduralSkyMaterial_jyhfs")
+
+[sub_resource type="Environment" id="Environment_tefeu"]
+background_mode = 2
+sky = SubResource("Sky_tbgi4")
 glow_enabled = true
 
 [node name="Main" type="Node3D" unique_id=1648061429]
 script = ExtResource("1_tbgi4")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2140406790]
-environment = SubResource("Environment_sgp6g")
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=415036031]
+environment = SubResource("Environment_tefeu")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=978131260]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
@@ -31,7 +40,7 @@ grow_vertical = 1
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=544765655]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -7)
 use_collision = true
-size = Vector3(3, 1, 18)
+size = Vector3(2.5, 1, 18)
 material = ExtResource("8_tipki")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=484324365]
