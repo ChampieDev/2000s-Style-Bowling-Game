@@ -1,4 +1,4 @@
-class_name Player extends CharacterBody3D
+extends CharacterBody3D
 
 @export var bowling_ball_scene: PackedScene
 
@@ -11,7 +11,7 @@ enum STATES {
 	POWER_SELECT,
 	THROWING,
 	TRACKING,
-	IDLE
+	IDLE,
 	}
 	
 var state: STATES = STATES.IDLE
