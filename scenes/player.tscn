@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bpxjgqxpdww1t" path="res://scripts/player.gd" id="1_3vyb7"]
 [ext_resource type="Material" uid="uid://qxfis282c3bw" path="res://assets/art/textures/template/player_p.tres" id="2_g2els"]
+[ext_resource type="PackedScene" uid="uid://dutcy2cyq31eh" path="res://scenes/bowling_ball.tscn" id="3_qhqgy"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_3cl70"]
 material = ExtResource("2_g2els")
@@ -21,3 +22,8 @@ shape = SubResource("ConvexPolygonShape3D_g2els")
 
 [node name="BowlingBallSpawner" type="Marker3D" parent="." unique_id=1030438073]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0, -1)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1257077813]
+
+[node name="BowlingBall" parent="." unique_id=1359143387 instance=ExtResource("3_qhqgy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.19999999, -1)
