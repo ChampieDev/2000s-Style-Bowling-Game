@@ -2,9 +2,103 @@
 
 [ext_resource type="Script" uid="uid://c7qwxbn43xfsu" path="res://scripts/player_2.gd" id="1_l6tho"]
 [ext_resource type="PackedScene" uid="uid://c5aex0vu0pym3" path="res://scenes/display_bowling_ball.tscn" id="2_s551d"]
+[ext_resource type="PackedScene" uid="uid://dutcy2cyq31eh" path="res://scenes/bowling_ball.tscn" id="2_yjax8"]
+
+[sub_resource type="Animation" id="Animation_oc1kf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DisplayBowlingBall:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [-1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DisplayBowlingBall:position:z")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [-1.5]
+}
+
+[sub_resource type="Animation" id="Animation_0mr0g"]
+resource_name = "release_throw"
+length = 0.1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DisplayBowlingBall:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.5, -1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DisplayBowlingBall:position:z")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-1.0, -1.5]
+}
+
+[sub_resource type="Animation" id="Animation_yjax8"]
+resource_name = "start_throw"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DisplayBowlingBall:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-1.0, -0.5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DisplayBowlingBall:position:z")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-1.5, -0.99999994]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oc1kf"]
+_data = {
+&"RESET": SubResource("Animation_oc1kf"),
+&"release_throw": SubResource("Animation_0mr0g"),
+&"start_throw": SubResource("Animation_yjax8")
+}
 
 [node name="Player2" type="Node3D" unique_id=325511711]
 script = ExtResource("1_l6tho")
+bowling_ball_scene = ExtResource("2_yjax8")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=932513120]
 transform = Transform3D(1, 0, 0, 0, 0.9781476, 0.2079117, 0, -0.2079117, 0.9781476, 0, 0, 0)
@@ -12,3 +106,6 @@ fov = 60.0
 
 [node name="DisplayBowlingBall" parent="." unique_id=1123375219 instance=ExtResource("2_s551d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -1.5)
+
+[node name="anims" type="AnimationPlayer" parent="." unique_id=132164195]
+libraries/ = SubResource("AnimationLibrary_oc1kf")

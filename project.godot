@@ -29,6 +29,10 @@ window/size/viewport_height=720
 window/size/mode=3
 window/stretch/mode="viewport"
 
+[dotnet]
+
+project/assembly_name="2000s Style Bowling Game"
+
 [file_customization]
 
 folder_colors={

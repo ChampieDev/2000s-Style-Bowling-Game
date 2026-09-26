@@ -3,7 +3,7 @@ extends Control
 @onready var h_bar: TextureProgressBar = $TextureProgressBar
 @onready var c_bar: TextureProgressBar = $TextureProgressBar2
 
-@export var p_value: int = 0.0
+@export var p_value: float = 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
