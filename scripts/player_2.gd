@@ -4,8 +4,6 @@ class_name Player extends Node3D
 
 var speed: float = 2.0
 
-var tween: Tween
-
 var starting_pos := Vector3(0.0, -1.0, -1.5)
 
 enum STATES {
@@ -60,14 +58,8 @@ func change_state(new_state: STATES) -> void:
 			b.position = display_ball.position
 			$DisplayBowlingBall.hide()
 			add_child(b)
+			b.reparent($"..")
+			print(b.get_parent().name)
 			change_state(STATES.TRACKING)
 		STATES.TRACKING:
-			pass
-			
-func animate(animation_name: String) -> void:
-	tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
-	match animation_name:
-		"start_throw":
-			tween.tween_property(display_ball, "position", Vector3(display_ball.position.x, -0.5, -1.0), 0.25)
-		"release_throw":
-			tween.tween_property(display_ball, "position", Vector3(display_ball.position.x, -1.0, -3.0), 0.25)
+			Global.start_tracking.emit()
