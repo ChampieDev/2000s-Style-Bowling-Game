@@ -7,6 +7,8 @@ var speed: float = 2.0
 
 var starting_pos := Vector3(0.0, -1.0, -1.5)
 
+var position_diffrence: float
+
 enum STATES {
 	AIMING,
 	POWER_SELECT,
@@ -43,6 +45,7 @@ func _process(delta: float) -> void:
 				change_state(STATES.POWER_SELECT)
 				
 		STATES.POWER_SELECT:
+			Global.set_disp_ball_trans.emit(false)
 			if Input.is_action_just_pressed("throw"):
 				change_state(STATES.RELEASE)
 		
@@ -50,7 +53,7 @@ func _process(delta: float) -> void:
 			pass
 			
 		STATES.TRACKING:
-			self.global_position.z = b.global_position.z + 4.0
+			self.global_position.z = b.global_position.z + position_diffrence
 
 func change_state(new_state: STATES) -> void:
 	var prev_state = state
@@ -74,3 +77,4 @@ func change_state(new_state: STATES) -> void:
 			change_state(STATES.TRACKING)
 		STATES.TRACKING:
 			Global.start_tracking.emit()
+			position_diffrence = self.global_position.z - b.global_position.z
