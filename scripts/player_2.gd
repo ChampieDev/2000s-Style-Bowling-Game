@@ -1,6 +1,7 @@
 class_name Player extends Node3D
 
 @onready var display_ball: Node3D = $DisplayBowlingBall
+var b: Node3D = null
 
 var speed: float = 2.0
 
@@ -11,6 +12,7 @@ enum STATES {
 	POWER_SELECT,
 	RELEASE,
 	TRACKING,
+	IDLE,
 }
 
 var state: STATES = STATES.AIMING
@@ -20,6 +22,7 @@ var state: STATES = STATES.AIMING
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	display_ball.position = starting_pos
+	Global.stop_tracking.connect(change_state, STATES.IDLE)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -41,6 +44,9 @@ func _process(delta: float) -> void:
 		
 		STATES.RELEASE:
 			pass
+			
+		STATES.TRACKING:
+			self.global_position.z = b.global_position.z + 4.0
 
 func change_state(new_state: STATES) -> void:
 	var prev_state = state
@@ -54,12 +60,13 @@ func change_state(new_state: STATES) -> void:
 		STATES.RELEASE:
 			$anims.play("release_throw")
 			await $anims.animation_finished
-			var b = bowling_ball_scene.instantiate()
+			b = bowling_ball_scene.instantiate()
 			b.position = display_ball.position
 			$DisplayBowlingBall.hide()
 			add_child(b)
 			b.reparent($"..")
 			print(b.get_parent().name)
+			await get_tree().create_timer(0.15).timeout
 			change_state(STATES.TRACKING)
 		STATES.TRACKING:
 			Global.start_tracking.emit()

@@ -4,7 +4,7 @@ var constant_velocity := Vector3.ZERO
 
 func _ready() -> void:
 	Global.release_throw.connect(throw, CONNECT_ONE_SHOT)
-	throw(24.0)
+	throw(20.0)
 
 func throw(force: float):
 	var throw_vector = (-global_transform.basis.z) * force
