@@ -12,5 +12,5 @@ func _process(delta: float) -> void:
 		ball.reparent(get_tree().current_scene)
 	
 func _on_tracking():
-	var tween = create_tween().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_BACK)
-	tween.tween_property($Player2, "global_position", Vector3(0.0, 1.2, -5.0), 1.0)
+	var tween = create_tween()
+	tween.tween_property($Player2, "global_position", Vector3(0.0, 1.2, -10.0), 1.3) # 1.3, 0.86
