@@ -32,8 +32,12 @@ func _process(delta: float) -> void:
 			display_ball.global_position.x = clampf(display_ball.global_position.x, -1.0, 1.0)
 			
 			var input_axis = Input.get_axis("left", "right")
-	
-			display_ball.global_position.x += input_axis * speed * delta
+			
+			if input_axis:
+				display_ball.global_position.x += input_axis * speed * delta
+				Global.set_disp_ball_trans.emit(true)
+			else:
+				Global.set_disp_ball_trans.emit(false)
 			
 			if Input.is_action_just_pressed("throw"):
 				change_state(STATES.POWER_SELECT)

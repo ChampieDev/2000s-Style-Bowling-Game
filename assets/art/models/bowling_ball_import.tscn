@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bmtge5h0kvb12"]
+
+[ext_resource type="PackedScene" uid="uid://c5m2r0gggd2nw" path="res://assets/art/models/bowling_ball.glb" id="1_bybm7"]
+[ext_resource type="Script" uid="uid://dn7idyym8h5jl" path="res://scripts/bowling_ball_import.gd" id="2_l1k02"]
+[ext_resource type="Material" uid="uid://qxfis282c3bw" path="res://assets/art/textures/template/player_p.tres" id="2_shmd2"]
+
+[node name="bowling_ball" unique_id=513792744 instance=ExtResource("1_bybm7")]
+script = ExtResource("2_l1k02")
+bowling_ball_texture = ExtResource("2_shmd2")
+
+[node name="Ball" parent="." index="0" unique_id=1172727590]
+surface_material_override/0 = ExtResource("2_shmd2")

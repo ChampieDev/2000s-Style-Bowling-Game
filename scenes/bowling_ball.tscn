@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dutcy2cyq31eh"]
 
 [ext_resource type="Script" uid="uid://cjaoak5863yg2" path="res://scripts/bowling_ball.gd" id="1_4t3fo"]
-[ext_resource type="PackedScene" uid="uid://c5m2r0gggd2nw" path="res://assets/art/models/bowling_ball.glb" id="1_abd54"]
+[ext_resource type="PackedScene" uid="uid://bmtge5h0kvb12" path="res://assets/art/models/bowling_ball_import.tscn" id="2_4t3fo"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_3cl70"]
 radius = 0.2
@@ -9,7 +9,7 @@ radius = 0.2
 [node name="BowlingBall" type="RigidBody3D" unique_id=1359143387]
 script = ExtResource("1_4t3fo")
 
-[node name="bowling_ball" parent="." unique_id=859143508 instance=ExtResource("1_abd54")]
+[node name="bowling_ball2" parent="." unique_id=513792744 instance=ExtResource("2_4t3fo")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=797055776]
 shape = SubResource("SphereShape3D_3cl70")

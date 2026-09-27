@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://bjnowo1bes786"]
+
+[ext_resource type="Script" uid="uid://bt8erlc3qaq4a" path="res://scripts/main.gd" id="1_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://l4y8cqw1rxbm" path="res://scenes/power_meter.tscn" id="2_tefeu"]
+[ext_resource type="PackedScene" uid="uid://djowckebmhal5" path="res://scenes/player_2.tscn" id="4_jyhfs"]
+[ext_resource type="Material" uid="uid://blsaf1lhfy7kg" path="res://assets/art/textures/template/prototype.tres" id="8_tipki"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jyhfs"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_tbgi4"]
+sky_material = SubResource("ProceduralSkyMaterial_jyhfs")
+
+[sub_resource type="Environment" id="Environment_tefeu"]
+background_mode = 2
+sky = SubResource("Sky_tbgi4")
+glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7pvwq"]
+size = Vector3(2.5, 1, 2)
+
+[node name="Main" type="Node3D" unique_id=1648061429]
+script = ExtResource("1_tbgi4")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=415036031]
+environment = SubResource("Environment_tefeu")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=978131260]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1568474282]
+
+[node name="PowerMeter" parent="CanvasLayer" unique_id=656314539 instance=ExtResource("2_tefeu")]
+visible = false
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=544765655]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -7)
+use_collision = true
+size = Vector3(2.5, 1, 18)
+material = ExtResource("8_tipki")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=484324365]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 3)
+use_collision = true
+size = Vector3(30, 1, 2)
+material = ExtResource("8_tipki")
+
+[node name="Player2" parent="." unique_id=325511711 instance=ExtResource("4_jyhfs")]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 1.1999999, 3.8)
+
+[node name="EndArea" type="Area3D" parent="." unique_id=253756517]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -16.5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EndArea" unique_id=2020919821]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
+shape = SubResource("BoxShape3D_7pvwq")
+
+[connection signal="body_entered" from="EndArea" to="." method="_on_end_area_body_entered"]
