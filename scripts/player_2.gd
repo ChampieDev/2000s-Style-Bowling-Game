@@ -74,6 +74,8 @@ func change_state(new_state: STATES) -> void:
 			charge = snapped(($"../PowerMeter/PowerMeter/PowerMeter".p_value * 0.1), 0.1) + 0.1
 			force = charge / (charge + 3.0)
 			print(force)
+			if force <= 0.3:
+				force = 0.3
 			$anims.play("release_throw")
 			await $anims.animation_finished
 			b = bowling_ball_scene.instantiate()
