@@ -34,7 +34,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 100.0]
+"values": [0.0, 200.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ncbie"]
@@ -61,8 +61,9 @@ offset_left = 238.0
 offset_top = 1.0
 offset_right = 1518.0
 offset_bottom = 721.0
-min_value = 50.0
-value = 50.0
+min_value = 100.0
+max_value = 200.0
+value = 100.0
 texture_under = ExtResource("2_w2clt")
 texture_progress = ExtResource("3_ncbie")
 
@@ -70,7 +71,6 @@ texture_progress = ExtResource("3_ncbie")
 layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0
-max_value = 50.0
 fill_mode = 4
 texture_under = ExtResource("4_sa2nq")
 texture_progress = ExtResource("5_a1tos")

@@ -11,9 +11,6 @@ func _process(delta: float) -> void:
 	h_bar.value = p_value
 	c_bar.value = p_value
 	
-	#if Input.is_action_just_pressed("throw"):
-		#$anims.pause()
-	
 func play_anim(anim_name: String):
 	print("yokodfea")
 	$anims.play(anim_name)
