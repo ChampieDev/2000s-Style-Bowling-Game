@@ -20,6 +20,9 @@ glow_enabled = true
 [sub_resource type="BoxShape3D" id="BoxShape3D_7pvwq"]
 size = Vector3(2.5, 1, 2)
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_3cl70"]
+viewport_path = NodePath("PowerMeter/PowerMeter")
+
 [node name="Main" type="Node3D" unique_id=1648061429]
 script = ExtResource("1_tbgi4")
 
@@ -61,5 +64,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -16.5)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EndArea" unique_id=2020919821]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
 shape = SubResource("BoxShape3D_7pvwq")
+
+[node name="PowerMeter" type="Sprite3D" parent="." unique_id=1232398458]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.8, 2.5)
+billboard = 1
+texture = SubResource("ViewportTexture_3cl70")
+
+[node name="PowerMeter" type="SubViewport" parent="PowerMeter" unique_id=2125081402]
+transparent_bg = true
+size = Vector2i(1280, 720)
+
+[node name="PowerMeter" parent="PowerMeter/PowerMeter" unique_id=1656633226 instance=ExtResource("2_tefeu")]
 
 [connection signal="body_entered" from="EndArea" to="." method="_on_end_area_body_entered"]

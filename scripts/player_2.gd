@@ -68,8 +68,10 @@ func change_state(new_state: STATES) -> void:
 			pass
 		STATES.POWER_SELECT:
 			$anims.play("start_throw")
+			Global.start_power.emit()
 		STATES.RELEASE:
-			charge = randi_range(1, 10)
+			$"../PowerMeter/PowerMeter/PowerMeter".anims.pause()
+			charge = snapped(($"../PowerMeter/PowerMeter/PowerMeter".p_value * 0.1), 0.1) + 0.1
 			force = charge / (charge + 3.0)
 			print(force)
 			$anims.play("release_throw")
