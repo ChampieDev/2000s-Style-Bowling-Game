@@ -9,6 +9,10 @@ var starting_pos := Vector3(0.0, -1.0, -1.5)
 
 var position_diffrence: float
 
+var force: float
+
+var charge: float
+
 enum STATES {
 	AIMING,
 	POWER_SELECT,
@@ -65,6 +69,9 @@ func change_state(new_state: STATES) -> void:
 		STATES.POWER_SELECT:
 			$anims.play("start_throw")
 		STATES.RELEASE:
+			charge = randi_range(1, 10)
+			force = charge / (charge + 3.0)
+			print(force)
 			$anims.play("release_throw")
 			await $anims.animation_finished
 			b = bowling_ball_scene.instantiate()
@@ -72,7 +79,7 @@ func change_state(new_state: STATES) -> void:
 			$DisplayBowlingBall.hide()
 			add_child(b)
 			b.reparent($"..")
-			print(b.get_parent().name)
+			b.throw(force * 10.0)
 			await get_tree().create_timer(0.15).timeout
 			change_state(STATES.TRACKING)
 		STATES.TRACKING:
