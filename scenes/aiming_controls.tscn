@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bd3praph6rduu"]
+
+[ext_resource type="Texture2D" uid="uid://ch4bukxmbt36k" path="res://assets/art/UI/aiming_controls.png" id="1_g6mcg"]
+
+[node name="AimingControls" type="Control" unique_id=1297205006]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1983408913]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer" unique_id=461149489]
+layout_mode = 2
+texture = ExtResource("1_g6mcg")

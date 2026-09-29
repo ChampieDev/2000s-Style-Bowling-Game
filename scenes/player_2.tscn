@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://c7qwxbn43xfsu" path="res://scripts/player_2.gd" id="1_l6tho"]
 [ext_resource type="PackedScene" uid="uid://c5aex0vu0pym3" path="res://scenes/display_bowling_ball.tscn" id="2_s551d"]
 [ext_resource type="PackedScene" uid="uid://dutcy2cyq31eh" path="res://scenes/bowling_ball.tscn" id="2_yjax8"]
+[ext_resource type="PackedScene" uid="uid://bd3praph6rduu" path="res://scenes/aiming_controls.tscn" id="4_oc1kf"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_grb4s"]
+viewport_path = NodePath("DisplayBowlingBall/Aims/SubViewport")
 
 [sub_resource type="Animation" id="Animation_oc1kf"]
 length = 0.001
@@ -106,6 +110,16 @@ fov = 60.0
 
 [node name="DisplayBowlingBall" parent="." unique_id=1123375219 instance=ExtResource("2_s551d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -1.5)
+
+[node name="Aims" type="Sprite3D" parent="DisplayBowlingBall" unique_id=339464770]
+transform = Transform3D(1.509958e-08, 0.2, -8.742278e-09, -1.0587912e-23, -8.742278e-09, -0.2, -0.2, 1.509958e-08, -6.600236e-16, 0, 0, -0.825)
+texture = SubResource("ViewportTexture_grb4s")
+
+[node name="SubViewport" type="SubViewport" parent="DisplayBowlingBall/Aims" unique_id=375012236]
+transparent_bg = true
+size = Vector2i(1280, 720)
+
+[node name="AimingControls" parent="DisplayBowlingBall/Aims/SubViewport" unique_id=1297205006 instance=ExtResource("4_oc1kf")]
 
 [node name="anims" type="AnimationPlayer" parent="." unique_id=132164195]
 libraries/ = SubResource("AnimationLibrary_oc1kf")

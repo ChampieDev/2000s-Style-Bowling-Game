@@ -65,13 +65,14 @@ func change_state(new_state: STATES) -> void:
 	
 	match new_state:
 		STATES.AIMING:
-			pass
+			$DisplayBowlingBall/Aims.show()
 		STATES.POWER_SELECT:
+			$DisplayBowlingBall/Aims.hide()
 			$anims.play("start_throw")
 			Global.start_power.emit()
 		STATES.RELEASE:
 			$"../PowerMeter/PowerMeter/PowerMeter".anims.pause()
-			charge = snapped(($"../PowerMeter/PowerMeter/PowerMeter".p_value * 0.1), 0.1) + 0.1
+			charge = snapped(($"../PowerMeter/PowerMeter/PowerMeter".p_value * 0.1), 0.1) + 0.2
 			force = charge / (charge + 3.0)
 			print(force)
 			if force <= 0.3:
