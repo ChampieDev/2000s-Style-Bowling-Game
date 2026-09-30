@@ -1,14 +1,41 @@
 [gd_scene format=3 uid="uid://b5thw26q4m8u"]
 
 [ext_resource type="Texture2D" uid="uid://makls2wudfpc" path="res://assets/art/UI/hud.png" id="1_ahhtf"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3cl70"]
-bg_color = Color(0, 0, 0, 0.49803922)
-corner_radius_top_right = 75
+[ext_resource type="Texture2D" uid="uid://d1y8gpg5m37a3" path="res://assets/art/icon.svg" id="2_oo0fn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_668ob"]
-bg_color = Color(0, 0, 0, 0.49803922)
+bg_color = Color(0.023529412, 0.5372549, 0.89411765, 0.60784316)
+border_color = Color(0, 0, 0, 1)
 corner_radius_bottom_right = 45
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oo0fn"]
+bg_color = Color(0, 0, 0, 0.78431374)
+corner_radius_bottom_right = 22
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ysmq"]
+bg_color = Color(0.15686275, 0.7529412, 0.39215687, 1)
+corner_radius_bottom_right = 22
+
+[sub_resource type="Theme" id="Theme_3cl70"]
+Label/font_sizes/font_size = 22
+Label/fonts/font = null
+Panel/styles/panel = SubResource("StyleBoxFlat_668ob")
+ProgressBar/font_sizes/font_size = 16
+ProgressBar/fonts/font = null
+ProgressBar/styles/background = SubResource("StyleBoxFlat_oo0fn")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_5ysmq")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3cl70"]
+bg_color = Color(0.40784314, 0.6039216, 1, 0.49803922)
+corner_radius_top_right = 75
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q2fj1"]
+bg_color = Color(0.023529412, 0.5372549, 0.89411765, 0.60784316)
+corner_radius_bottom_left = 80
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ctalp"]
+bg_color = Color(0.40784314, 0.6039216, 1, 0.49803922)
+corner_radius_top_left = 45
 
 [node name="HUD" type="Control" unique_id=105312940]
 layout_mode = 3
@@ -17,8 +44,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_3cl70")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2038934217]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -45,6 +74,18 @@ theme_override_constants/margin_bottom = 196
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_3cl70")
 
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer2/FrameCount" unique_id=1548168439]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 8
+
+[node name="Label" type="Label" parent="MarginContainer2/FrameCount/MarginContainer" unique_id=338909297]
+layout_mode = 2
+text = "frame: 8"
+horizontal_alignment = 1
+
 [node name="PowerBar" type="MarginContainer" parent="MarginContainer2" unique_id=831570475]
 layout_mode = 2
 theme_override_constants/margin_top = 533
@@ -53,4 +94,95 @@ theme_override_constants/margin_bottom = 127
 
 [node name="Panel" type="Panel" parent="MarginContainer2/PowerBar" unique_id=365200307]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_668ob")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer2/PowerBar" unique_id=1715721369]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 16
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer2/PowerBar/MarginContainer" unique_id=837380982]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+value = 79.55
+show_percentage = false
+
+[node name="PowerLabel" type="MarginContainer" parent="MarginContainer2" unique_id=529238328]
+layout_mode = 2
+theme_override_constants/margin_top = 593
+theme_override_constants/margin_right = 1040
+theme_override_constants/margin_bottom = 77
+
+[node name="Panel" type="Panel" parent="MarginContainer2/PowerLabel" unique_id=1537836887]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer2/PowerLabel" unique_id=1954184443]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 8
+
+[node name="Label" type="Label" parent="MarginContainer2/PowerLabel/MarginContainer" unique_id=917884906]
+layout_mode = 2
+text = "power"
+horizontal_alignment = 1
+
+[node name="LivesCounter" type="MarginContainer" parent="MarginContainer2" unique_id=1613238767]
+layout_mode = 2
+theme_override_constants/margin_left = 880
+theme_override_constants/margin_top = 533
+theme_override_constants/margin_bottom = 77
+
+[node name="Panel" type="Panel" parent="MarginContainer2/LivesCounter" unique_id=1865964000]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_q2fj1")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer2/LivesCounter" unique_id=1011707262]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2/LivesCounter/MarginContainer" unique_id=1822816995]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer2/LivesCounter/MarginContainer/HBoxContainer" unique_id=1653874255]
+layout_mode = 2
+texture = ExtResource("2_oo0fn")
+expand_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer2/LivesCounter/MarginContainer/HBoxContainer" unique_id=1716317308]
+layout_mode = 2
+texture = ExtResource("2_oo0fn")
+expand_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="MarginContainer2/LivesCounter/MarginContainer/HBoxContainer" unique_id=116782612]
+layout_mode = 2
+texture = ExtResource("2_oo0fn")
+expand_mode = 2
+
+[node name="LivesLabel" type="MarginContainer" parent="MarginContainer2" unique_id=1098312193]
+layout_mode = 2
+theme_override_constants/margin_left = 1012
+theme_override_constants/margin_top = 475
+theme_override_constants/margin_bottom = 187
+
+[node name="Panel" type="Panel" parent="MarginContainer2/LivesLabel" unique_id=241242164]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ctalp")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer2/LivesLabel" unique_id=2095129003]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 8
+
+[node name="Label" type="Label" parent="MarginContainer2/LivesLabel/MarginContainer" unique_id=34441278]
+layout_mode = 2
+text = "lives"
+horizontal_alignment = 1
