@@ -52,7 +52,7 @@ texture = ExtResource("3_tbgi4")
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=544765655]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -7)
 use_collision = true
-size = Vector3(2.5, 1, 18)
+size = Vector3(2, 1, 18)
 material = ExtResource("8_tipki")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=484324365]

@@ -112,7 +112,7 @@ fov = 60.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -1.5)
 
 [node name="Aims" type="Sprite3D" parent="DisplayBowlingBall" unique_id=339464770]
-transform = Transform3D(1.509958e-08, 0.2, -8.742278e-09, -1.0587912e-23, -8.742278e-09, -0.2, -0.2, 1.509958e-08, -6.600236e-16, 0, 0, -0.825)
+transform = Transform3D(1.509958e-08, 0.2, -8.742278e-09, -1.0587912e-23, -8.742278e-09, -0.2, -0.2, 1.509958e-08, -6.600236e-16, 0, -0.19, -0.825)
 texture = SubResource("ViewportTexture_grb4s")
 
 [node name="SubViewport" type="SubViewport" parent="DisplayBowlingBall/Aims" unique_id=375012236]
