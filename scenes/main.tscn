@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://l4y8cqw1rxbm" path="res://scenes/power_meter.tscn" id="2_tefeu"]
 [ext_resource type="PackedScene" uid="uid://b5thw26q4m8u" path="res://scenes/hud.tscn" id="3_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://djowckebmhal5" path="res://scenes/player_2.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://dy3h5ba2nshm3" path="res://10_pins_group.tscn" id="6_tefeu"]
 [ext_resource type="Material" uid="uid://blsaf1lhfy7kg" path="res://assets/art/textures/template/prototype.tres" id="8_tipki"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jyhfs"]
@@ -78,5 +79,8 @@ transparent_bg = true
 size = Vector2i(1280, 720)
 
 [node name="PowerMeter" parent="PowerMeter/PowerMeter" unique_id=1656633226 instance=ExtResource("2_tefeu")]
+
+[node name="10PinsGroup" parent="." unique_id=1894372538 instance=ExtResource("6_tefeu")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.01, -15.4)
 
 [connection signal="body_entered" from="EndArea" to="." method="_on_end_area_body_entered"]

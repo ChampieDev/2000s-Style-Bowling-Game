@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dy3h5ba2nshm3"]
+
+[ext_resource type="PackedScene" uid="uid://dyprrvrp8w24f" path="res://scenes/bowling_pin.tscn" id="1_r2uek"]
+
+[node name="10PinsGroup" type="Node3D" unique_id=1894372538]
+
+[node name="BowlingPin" parent="." unique_id=304665493 instance=ExtResource("1_r2uek")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.6999999)
+
+[node name="BowlingPin2" parent="." unique_id=1679928393 instance=ExtResource("1_r2uek")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1.1920929e-07)
+
+[node name="BowlingPin3" parent="." unique_id=489881248 instance=ExtResource("1_r2uek")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.6)
+
+[node name="BowlingPin4" parent="." unique_id=1278056944 instance=ExtResource("1_r2uek")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, 0, -0.6999999)
+
+[node name="BowlingPin5" parent="." unique_id=292067428 instance=ExtResource("1_r2uek")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0.6)
+
+[node name="BowlingPin6" parent="." unique_id=51015645 instance=ExtResource("1_r2uek")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.2)
+
+[node name="BowlingPin7" parent="." unique_id=1319550392 instance=ExtResource("1_r2uek")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.1920929e-07)
+
+[node name="BowlingPin8" parent="." unique_id=1401780994 instance=ExtResource("1_r2uek")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.6999999)
+
+[node name="BowlingPin9" parent="." unique_id=1481105037 instance=ExtResource("1_r2uek")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1.1920929e-07)
+
+[node name="BowlingPin10" parent="." unique_id=37979935 instance=ExtResource("1_r2uek")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4, 0, -0.6999999)

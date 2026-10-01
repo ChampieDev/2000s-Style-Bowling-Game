@@ -1,4 +1,27 @@
 [gd_scene format=3 uid="uid://dyprrvrp8w24f"]
 
+[ext_resource type="PackedScene" uid="uid://cqeeqrhfb1qvw" path="res://assets/art/models/Bowling Pin.glb" id="1_yklfw"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_yklfw"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_yklfw"]
+height = 1.1417968
+radius = 0.16357422
+
 [node name="BowlingPin" type="RigidBody3D" unique_id=304665493]
+mass = 0.2
+physics_material_override = SubResource("PhysicsMaterial_yklfw")
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, -0.3, 0)
+can_sleep = false
+contact_monitor = true
+max_contacts_reported = 4
+linear_damp = 0.6
+angular_damp = 0.6
 constant_force = Vector3(0, 0, 1)
+
+[node name="Bowling Pin" parent="." unique_id=1905873142 instance=ExtResource("1_yklfw")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=222846532]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5716431, 0)
+shape = SubResource("CylinderShape3D_yklfw")

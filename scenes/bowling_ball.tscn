@@ -7,6 +7,7 @@
 radius = 0.2
 
 [node name="BowlingBall" type="RigidBody3D" unique_id=1359143387]
+mass = 7.0
 script = ExtResource("1_4t3fo")
 
 [node name="bowling_ball2" parent="." unique_id=513792744 instance=ExtResource("2_4t3fo")]
