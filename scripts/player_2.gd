@@ -84,7 +84,7 @@ func change_state(new_state: STATES) -> void:
 			$DisplayBowlingBall.hide()
 			add_child(b)
 			b.reparent($"..")
-			b.throw(force * 10.0)
+			b.throw(force * 100.0)
 			await get_tree().create_timer(0.15).timeout
 			change_state(STATES.TRACKING)
 		STATES.TRACKING:
