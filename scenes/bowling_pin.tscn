@@ -2,26 +2,21 @@
 
 [ext_resource type="PackedScene" uid="uid://cqeeqrhfb1qvw" path="res://assets/art/models/Bowling Pin.glb" id="1_yklfw"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_yklfw"]
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_yklfw"]
-height = 1.1417968
-radius = 0.16357422
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_yklfw"]
+points = PackedVector3Array(2.3355544, -5.100062, -0.24331751, -2.3447878, -4.8417315, -0.4755186, -2.3481023, -4.8473625, 0.45765793, 0.48173118, 7.0192504, 0.4837139, 0.686066, -4.5976796, 2.3161535, 0.43699792, -2.4465392, -2.2529416, -1.3045213, 6.6256313, 0.5076187, -0.25032538, -8.547406, -1.2075764, 0.5056126, 6.6256313, -1.3025151, -1.352588, -3.5598466, -2.0223253, 1.2820355, 6.3646965, 0.7664264, 0.46362627, -8.482417, 1.1789111, -0.92589474, -4.0780563, 2.2779965, -1.0457137, 6.6256313, -1.0437075, -0.5280984, 6.6256313, 1.2840416, 2.036386, -4.0605264, -1.3736649, 2.0510447, -4.3129854, 1.3649006, -0.9756905, -8.595012, 0.71391755, 1.2820355, 6.3646965, -0.7848999, 1.175555, -8.473511, -0.48355016, 0.6860433, -5.760161, -2.10241, -2.0521433, -4.0508504, 1.3509831, 0.7644202, 6.3646965, 1.2840416, -1.6571761, -7.226003, -0.71447223, 2.239074, -2.2256312, 0.21516395, 1.3300153, -3.3353782, -2.022092, -0.7019628, -4.5628023, -2.3133354, -2.2194533, -2.6420374, -0.67142373, 1.6313212, -6.9790254, 0.92930156, -0.78690606, 6.3646965, -1.3025151, -0.72037214, -6.553191, 1.8825052, 0.8930733, -3.363045, 2.2519958)
 
 [node name="BowlingPin" type="RigidBody3D" unique_id=304665493]
-mass = 0.2
-physics_material_override = SubResource("PhysicsMaterial_yklfw")
+collision_layer = 4
+collision_mask = 7
 center_of_mass_mode = 1
-center_of_mass = Vector3(0, -0.3, 0)
+center_of_mass = Vector3(0, -30.45, 0)
 can_sleep = false
+continuous_cd = true
 contact_monitor = true
 max_contacts_reported = 4
-linear_damp = 0.6
-angular_damp = 0.6
-constant_force = Vector3(0, 0, 1)
 
 [node name="Bowling Pin" parent="." unique_id=1905873142 instance=ExtResource("1_yklfw")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=222846532]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5716431, 0)
-shape = SubResource("CylinderShape3D_yklfw")
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=2031512264]
+transform = Transform3D(0.066270314, 0, 0, 0, 0.066270314, 0, 0, 0, 0.066270314, 0, 0.5981506, 0.0066744564)
+shape = SubResource("ConvexPolygonShape3D_yklfw")
